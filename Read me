@@ -1,1 +1,8 @@
-Hi
+AI Driven Early Warning Systems for Marine Stingers (computer vision models) 
+
+Bluebottles frequently appear on Australian beaches, causing painful stings and posing a public safety challenge. Despite their lack of swimming ability, these organisms are transported by ocean currents, wind patterns, and wave activity, leading to variable beaching events. The objective of this project is to develop an AI model linking bluebottle occurrences along eastern coast of Australia to environmental factors such as wind and waves, enabling real time forecasting of bluebottle presence, and integrating some temporal continuity. 
+By incorporating environmental drivers and coastal characteristics, we will assess the relative importance of these factors using advanced computer vision models. Beyond single point analysis, the project also considers neighbouring ocean areas adjacent to the coastline. By analysing spatial patches offshore and applying computer vision techniques, we aim to capture broader spatial patterns of environmental change such as shifts in wind, wave, and current fields that may influence bluebottle transport.  
+This patch based approach enhances the model’s ability to detect spatiotemporal patterns of daily variability, providing more detailed understanding of how environmental dynamics drive beaching events. 
+
+Data:
+
