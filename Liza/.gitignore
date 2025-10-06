@@ -1,0 +1,15 @@
+*.npz
+*.csv
+*.tsv
+*.parquet
+*.h5
+*.npy
+.ipynb_checkpoints/
+*.log
+*.tmp
+*.bak
+*.swp
+.DS_Store
+Thumbs.db
+venv/
+.env/
