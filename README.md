@@ -1,94 +1,114 @@
-# AI Driven Early Warning Systems for Marine Stingers (computer vision models)
+# AI Driven Early Warning Systems for Marine Stingers (Computer Vision Models)
 
-Bluebottles frequently appear on Australian beaches, causing painful stings and posing a public safety challenge. Despite their lack of swimming ability, these organisms are transported by ocean currents, wind patterns, and wave activity, leading to variable beaching events. The objective of this project is to develop an AI model linking bluebottle occurrences along eastern coast of Australia to environmental factors such as wind and waves, enabling real time forecasting of bluebottle presence, and integrating some temporal continuity.
-By incorporating environmental drivers and coastal characteristics, we will assess the relative importance of these factors using advanced computer vision models. Beyond single point analysis, the project also considers neighbouring ocean areas adjacent to the coastline. By analysing spatial patches offshore and applying computer vision techniques, we aim to capture broader spatial patterns of environmental change such as shifts in wind, wave, and current fields that may influence bluebottle transport.
-This patch based approach enhances the model’s ability to detect spatiotemporal patterns of daily variability, providing more detailed understanding of how environmental dynamics drive beaching events.
+Bluebottles frequently appear on Australian beaches, causing painful stings and posing a public safety challenge. This project develops an AI model linking bluebottle occurrences along the eastern coast of Australia to environmental factors such as ocean currents, wind patterns, temperature, and salinity, enabling real-time forecasting of bluebottle presence with temporal continuity.
+
+By incorporating environmental drivers and coastal characteristics using advanced 3D CNN architectures, we assess the relative importance of these factors. The project analyzes spatial patches offshore to capture broader spatiotemporal patterns of environmental change that influence bluebottle transport and beaching events.
+
+---
 
 ## 🧰 Requirements
 
-- It is recommended to use **VS Code** or **JupyterLab**
-- **[Anaconda](https://www.anaconda.com/products/distribution) / Miniconda** installed on your system
-- **Python version:** ≥ 3.10.18
-- **Operating System:** Windows, macOS, or Linux
+- **Python:** ≥ 3.10.18
+- **TensorFlow:** ≥ 2.10.0 (GPU version recommended)
+- **GPU:** NVIDIA GPU with 6-8GB VRAM (recommended for 3D CNN training)
+- **Package Manager:** Anaconda/Miniconda
+- **IDE:** VS Code or JupyterLab
+
+> **Note:** This project uses GPU acceleration. CPU-only training is possible but significantly slower.
+
+---
+
+## 📁 Project File Structure
+
+```
+./
+├── data/
+│   ├── 2-Data/
+│   │   └── Data files in original orginal format
+│   └── processed/
+│       ├── GoldCoast/
+│       │   └── (processed data files)
+│       └── Sydney_Newcastle/
+│           └── (processed data files)
+├── figures/                          # Plots and visualizations
+├── notebooks/                        # Jupyter notebooks (EDA, analysis)
+├── bluebottle.yaml                   # Conda environment file
+└── README.md                         # This file
+```
+
+---
+
+## 🗂️ Data Folder Setup
+
+Create the required folder structure and place your data files:
+
+### Windows (Command Prompt)
+```cmd
+mkdir data
+```
+
+Then place your data files in under `data/2-Data/`.
+
+```cmd
+mkdir data\processed
+mkdir data\processed\GoldCoast
+mkdir data\processed\Sydney_Newcastle
+```
+
+
+
 
 ---
 
 ## ⚙️ Environment Setup
 
-1. **Clone or download** the repository and select the ***Vansh*** branch
-
+1. **Clone the repository:**
    ```bash
    git clone <repo_url>
    cd <repo_name>
    ```
-2. **Create a new Conda environment** using the provided YAML file:
 
+2. **Create and activate the Conda environment:**
    ```bash
    conda env create -f bluebottle.yaml
-   ```
-3. **Activate the environment**:
-
-   ```bash
    conda activate bluebottle
    ```
-4. **Verify the Python version** (should be ≥ 3.10.18):
 
+3. **Verify TensorFlow and GPU:**
    ```bash
-   python --version
+   python -c "import tensorflow as tf; print('TF version:', tf.__version__); print('GPU:', tf.config.list_physical_devices('GPU'))"
    ```
+
 
 ---
 
-## 🚀 Running the Notebook
+## 🧠 Model Details
 
-1. **Launch Jupyter Notebook**:
+| Model | Parameters | Key Feature |
+|-------|-----------|-------------|
+| **C3D** | ~200K | Uniform 3×3×3 kernels, fast training |
+| **3D ResNet** | ~350K | Skip connections, deeper learning |
+| **I3D** | ~300K | Multi-scale temporal convolutions |
 
-   ```bash
-   jupyter notebook
-   ```
-2. In the Jupyter interface, **open** the file:
-
-   ```
-   EDA.ipynb
-   ```
-3. **Run all cells** sequentially to execute the analysis.
+**Input:** Temporal sequences of 7 consecutive days  
+**Shape:** (7, 15, 15, 6) = (time_steps, height, width, channels)  
+**Output:** Binary prediction (bluebottle stings: yes/no)
 
 ---
 
-## 🧩 Troubleshooting
 
-* If the environment name in `bluebottle.yaml` conflicts with an existing one, rename it in the file before creating:
+## 🔧 Quick Troubleshooting
 
-  ```yaml
-  name: bluebottle
-  ```
-* To update dependencies later:
-
-  ```bash
-  conda env update -f bluebottle.yaml --prune
-  ```
-* If Jupyter does not detect the new environment:
-
-  ```bash
-  python -m ipykernel install --user --name=bluebottle --display-name "Python (bluebottle)"
-  ```
-
----
-
-## 📄 File Structure
-
-```
-│
-├── output              # Output folder
-├── EDA.ipynb           # Jupyter notebook containing the EDA process
-├── bluebottle.yaml     # Conda environment file
-└── README.md           # Setup and usage instructions
+**GPU not detected:**
+```bash
+nvidia-smi  # Check CUDA installation
 ```
 
----
+**Out of Memory error:**  
+Reduce `BATCH_SIZE` and `TEMPORAL_LENGTH` in the training script.
 
-## 🧠 Notes
+**Jupyter kernel not found:**
+```bash
+python -m ipykernel install --user --name=bluebottle
+```
 
-* Always activate the environment before running the notebook.
-
----

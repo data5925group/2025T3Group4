@@ -1,8 +1,9 @@
-2-Data/
 requirements.txt
-EDA on Goldcoast dataset.pptx
+presentations/
 
+data/2-Data/
 
-
+data/processed/GoldCoast/*.npz
+data/processed/Sydney_NewCastle/*.npz
 
 
