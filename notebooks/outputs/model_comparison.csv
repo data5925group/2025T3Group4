@@ -1,0 +1,4 @@
+Model,Parameters,Best Val Acc,Best Epoch,Test Acc,Test F1,Final Train Loss,Final Val Loss,Epochs Trained
+Simple3DCNN,"15,953",0.8108,28,0.8125,0.6441,0.1858,0.4802,28
+C3D_Lite,"56,737",0.8468,5,0.7321,0.5455,0.1439,0.6183,21
+Separable3DCNN,"44,177",0.8468,26,0.7679,0.5806,0.1290,0.5245,26
