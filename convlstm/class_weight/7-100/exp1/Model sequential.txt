@@ -1,0 +1,261 @@
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ conv_lstm2d (ConvLSTM2D)    (None, 7, 13, 13, 32)     43904     
+                                                                 
+ layer_normalization (Layer  (None, 7, 13, 13, 32)     64        
+ Normalization)                                                  
+                                                                 
+ conv_lstm2d_1 (ConvLSTM2D)  (None, 7, 13, 13, 32)     73856     
+                                                                 
+ layer_normalization_1 (Lay  (None, 7, 13, 13, 32)     64        
+ erNormalization)                                                
+                                                                 
+ conv3d (Conv3D)             (None, 7, 13, 13, 32)     27680     
+                                                                 
+ global_average_pooling3d (  (None, 32)                0         
+ GlobalAveragePooling3D)                                         
+                                                                 
+ dense (Dense)               (None, 64)                2112      
+                                                                 
+ dropout (Dropout)           (None, 64)                0         
+                                                                 
+ dense_1 (Dense)             (None, 1)                 65        
+                                                                 
+=================================================================
+Total params: 147745 (577.13 KB)
+Trainable params: 147745 (577.13 KB)
+Non-trainable params: 0 (0.00 Byte)
+_________________________________________________________________
+Epoch 1/100
+72/72 [==============================] - 35s 383ms/step - loss: 0.7045 - auc: 0.5475 - auprc: 0.2983 - accuracy: 0.5222 - precision: 0.2906 - recall: 0.5191 - val_loss: 0.4301 - val_auc: 0.3534 - val_auprc: 0.0837 - val_accuracy: 0.8750 - val_precision: 0.0000e+00 - val_recall: 0.0000e+00
+Epoch 2/100
+72/72 [==============================] - 33s 464ms/step - loss: 0.6730 - auc: 0.6063 - auprc: 0.3287 - accuracy: 0.5457 - precision: 0.3317 - recall: 0.6529 - val_loss: 0.5037 - val_auc: 0.3688 - val_auprc: 0.0879 - val_accuracy: 0.8250 - val_precision: 0.1111 - val_recall: 0.0714
+Epoch 3/100
+72/72 [==============================] - 46s 639ms/step - loss: 0.6609 - auc: 0.6185 - auprc: 0.3486 - accuracy: 0.5509 - precision: 0.3387 - recall: 0.6752 - val_loss: 0.4589 - val_auc: 0.3710 - val_auprc: 0.0886 - val_accuracy: 0.8292 - val_precision: 0.1176 - val_recall: 0.0714
+Epoch 4/100
+72/72 [==============================] - 47s 651ms/step - loss: 0.6457 - auc: 0.6570 - auprc: 0.3704 - accuracy: 0.5753 - precision: 0.3564 - recall: 0.6879 - val_loss: 0.6599 - val_auc: 0.3995 - val_auprc: 0.0943 - val_accuracy: 0.6542 - val_precision: 0.0635 - val_recall: 0.1429
+Epoch 5/100
+72/72 [==============================] - 52s 728ms/step - loss: 0.6697 - auc: 0.6178 - auprc: 0.3343 - accuracy: 0.5587 - precision: 0.3405 - recall: 0.6561 - val_loss: 0.5241 - val_auc: 0.3822 - val_auprc: 0.0892 - val_accuracy: 0.8750 - val_precision: 0.0000e+00 - val_recall: 0.0000e+00
+Epoch 6/100
+72/72 [==============================] - 52s 716ms/step - loss: 0.6587 - auc: 0.6372 - auprc: 0.3588 - accuracy: 0.5631 - precision: 0.3449 - recall: 0.6656 - val_loss: 0.4986 - val_auc: 0.4683 - val_auprc: 0.1006 - val_accuracy: 0.8125 - val_precision: 0.0952 - val_recall: 0.0714
+Epoch 7/100
+72/72 [==============================] - 51s 711ms/step - loss: 0.6359 - auc: 0.6644 - auprc: 0.3796 - accuracy: 0.5692 - precision: 0.3683 - recall: 0.8057 - val_loss: 0.6455 - val_auc: 0.4052 - val_auprc: 0.0916 - val_accuracy: 0.6208 - val_precision: 0.0800 - val_recall: 0.2143
+Epoch 8/100
+72/72 [==============================] - 51s 716ms/step - loss: 0.6436 - auc: 0.6574 - auprc: 0.3671 - accuracy: 0.5744 - precision: 0.3618 - recall: 0.7293 - val_loss: 0.6900 - val_auc: 0.4164 - val_auprc: 0.0921 - val_accuracy: 0.3958 - val_precision: 0.1074 - val_recall: 0.5714
+Epoch 9/100
+72/72 [==============================] - 52s 719ms/step - loss: 0.6464 - auc: 0.6529 - auprc: 0.3674 - accuracy: 0.5753 - precision: 0.3583 - recall: 0.7006 - val_loss: 0.4792 - val_auc: 0.4050 - val_auprc: 0.0930 - val_accuracy: 0.8833 - val_precision: 0.0000e+00 - val_recall: 0.0000e+00
+Epoch 10/100
+72/72 [==============================] - 53s 731ms/step - loss: 0.6276 - auc: 0.6850 - auprc: 0.4111 - accuracy: 0.5918 - precision: 0.3764 - recall: 0.7516 - val_loss: 0.7217 - val_auc: 0.4544 - val_auprc: 0.1158 - val_accuracy: 0.4917 - val_precision: 0.0804 - val_recall: 0.3214
+Epoch 11/100
+72/72 [==============================] - 51s 705ms/step - loss: 0.6223 - auc: 0.6843 - auprc: 0.3800 - accuracy: 0.5953 - precision: 0.3871 - recall: 0.8248 - val_loss: 0.5279 - val_auc: 0.5271 - val_auprc: 0.1238 - val_accuracy: 0.8042 - val_precision: 0.1481 - val_recall: 0.1429
+Epoch 12/100
+72/72 [==============================] - 51s 704ms/step - loss: 0.6180 - auc: 0.6924 - auprc: 0.4044 - accuracy: 0.6049 - precision: 0.3793 - recall: 0.7006 - val_loss: 0.5484 - val_auc: 0.4747 - val_auprc: 0.1136 - val_accuracy: 0.7625 - val_precision: 0.1081 - val_recall: 0.1429
+Epoch 13/100
+72/72 [==============================] - 51s 709ms/step - loss: 0.6050 - auc: 0.7220 - auprc: 0.4283 - accuracy: 0.6301 - precision: 0.4109 - recall: 0.8153 - val_loss: 0.5429 - val_auc: 0.4675 - val_auprc: 0.1172 - val_accuracy: 0.7042 - val_precision: 0.0784 - val_recall: 0.1429
+Epoch 14/100
+72/72 [==============================] - 51s 710ms/step - loss: 0.6425 - auc: 0.6866 - auprc: 0.4255 - accuracy: 0.6319 - precision: 0.4011 - recall: 0.7038 - val_loss: 0.4469 - val_auc: 0.4580 - val_auprc: 0.1111 - val_accuracy: 0.8792 - val_precision: 0.4000 - val_recall: 0.0714
+Epoch 15/100
+72/72 [==============================] - 51s 708ms/step - loss: 0.6202 - auc: 0.7127 - auprc: 0.4300 - accuracy: 0.6353 - precision: 0.4061 - recall: 0.7229 - val_loss: 0.5925 - val_auc: 0.5223 - val_auprc: 0.1285 - val_accuracy: 0.6500 - val_precision: 0.0882 - val_recall: 0.2143
+Epoch 16/100
+72/72 [==============================] - 52s 719ms/step - loss: 0.5832 - auc: 0.7502 - auprc: 0.4568 - accuracy: 0.6623 - precision: 0.4369 - recall: 0.8153 - val_loss: 0.4438 - val_auc: 0.5491 - val_auprc: 0.1281 - val_accuracy: 0.8417 - val_precision: 0.1875 - val_recall: 0.1071
+Epoch 17/100
+72/72 [==============================] - 52s 718ms/step - loss: 0.5798 - auc: 0.7511 - auprc: 0.4623 - accuracy: 0.6510 - precision: 0.4256 - recall: 0.7930 - val_loss: 0.4439 - val_auc: 0.5670 - val_auprc: 0.1325 - val_accuracy: 0.8292 - val_precision: 0.1176 - val_recall: 0.0714
+Epoch 18/100
+72/72 [==============================] - 53s 735ms/step - loss: 0.5756 - auc: 0.7431 - auprc: 0.4427 - accuracy: 0.6510 - precision: 0.4286 - recall: 0.8312 - val_loss: 0.5393 - val_auc: 0.5691 - val_auprc: 0.1264 - val_accuracy: 0.6792 - val_precision: 0.0702 - val_recall: 0.1429
+Epoch 19/100
+72/72 [==============================] - 51s 709ms/step - loss: 0.5600 - auc: 0.7688 - auprc: 0.4866 - accuracy: 0.6623 - precision: 0.4337 - recall: 0.7707 - val_loss: 0.4786 - val_auc: 0.5354 - val_auprc: 0.1258 - val_accuracy: 0.8083 - val_precision: 0.1250 - val_recall: 0.1071
+Epoch 20/100
+72/72 [==============================] - 51s 711ms/step - loss: 0.5611 - auc: 0.7780 - auprc: 0.4775 - accuracy: 0.6797 - precision: 0.4525 - recall: 0.8185 - val_loss: 0.5096 - val_auc: 0.6303 - val_auprc: 0.1443 - val_accuracy: 0.7417 - val_precision: 0.1136 - val_recall: 0.1786
+Epoch 21/100
+72/72 [==============================] - 52s 717ms/step - loss: 0.5737 - auc: 0.7512 - auprc: 0.4589 - accuracy: 0.6649 - precision: 0.4383 - recall: 0.8025 - val_loss: 0.5008 - val_auc: 0.5528 - val_auprc: 0.1278 - val_accuracy: 0.7375 - val_precision: 0.0732 - val_recall: 0.1071
+Epoch 22/100
+72/72 [==============================] - 51s 705ms/step - loss: 0.5642 - auc: 0.7621 - auprc: 0.4682 - accuracy: 0.6562 - precision: 0.4315 - recall: 0.8121 - val_loss: 0.4401 - val_auc: 0.5727 - val_auprc: 0.1252 - val_accuracy: 0.8333 - val_precision: 0.1250 - val_recall: 0.0714
+Epoch 23/100
+72/72 [==============================] - 51s 705ms/step - loss: 0.5547 - auc: 0.7729 - auprc: 0.4744 - accuracy: 0.6806 - precision: 0.4517 - recall: 0.7898 - val_loss: 0.4568 - val_auc: 0.5644 - val_auprc: 0.1278 - val_accuracy: 0.8000 - val_precision: 0.0833 - val_recall: 0.0714
+Epoch 24/100
+72/72 [==============================] - 51s 708ms/step - loss: 0.5403 - auc: 0.7877 - auprc: 0.5179 - accuracy: 0.6989 - precision: 0.4698 - recall: 0.7930 - val_loss: 0.4365 - val_auc: 0.5404 - val_auprc: 0.1253 - val_accuracy: 0.8292 - val_precision: 0.1176 - val_recall: 0.0714
+Epoch 25/100
+72/72 [==============================] - 51s 711ms/step - loss: 0.5463 - auc: 0.7793 - auprc: 0.4741 - accuracy: 0.6884 - precision: 0.4600 - recall: 0.8057 - val_loss: 0.6490 - val_auc: 0.5065 - val_auprc: 0.1292 - val_accuracy: 0.6000 - val_precision: 0.0854 - val_recall: 0.2500
+Epoch 26/100
+72/72 [==============================] - 51s 704ms/step - loss: 0.5449 - auc: 0.7857 - auprc: 0.5124 - accuracy: 0.6954 - precision: 0.4672 - recall: 0.8153 - val_loss: 0.4349 - val_auc: 0.5655 - val_auprc: 0.1297 - val_accuracy: 0.8375 - val_precision: 0.1333 - val_recall: 0.0714
+Epoch 27/100
+72/72 [==============================] - 51s 713ms/step - loss: 0.5370 - auc: 0.7904 - auprc: 0.5069 - accuracy: 0.7023 - precision: 0.4742 - recall: 0.8185 - val_loss: 0.5358 - val_auc: 0.5593 - val_auprc: 0.1667 - val_accuracy: 0.6792 - val_precision: 0.1111 - val_recall: 0.2500
+Epoch 28/100
+72/72 [==============================] - 51s 706ms/step - loss: 0.5233 - auc: 0.8069 - auprc: 0.5524 - accuracy: 0.7084 - precision: 0.4810 - recall: 0.8471 - val_loss: 0.5595 - val_auc: 0.5203 - val_auprc: 0.1181 - val_accuracy: 0.6750 - val_precision: 0.0833 - val_recall: 0.1786
+Epoch 29/100
+72/72 [==============================] - 51s 709ms/step - loss: 0.5379 - auc: 0.7915 - auprc: 0.5132 - accuracy: 0.6963 - precision: 0.4678 - recall: 0.8089 - val_loss: 0.5664 - val_auc: 0.5077 - val_auprc: 0.1112 - val_accuracy: 0.6625 - val_precision: 0.1045 - val_recall: 0.2500
+Epoch 30/100
+72/72 [==============================] - 50s 701ms/step - loss: 0.5178 - auc: 0.8031 - auprc: 0.5186 - accuracy: 0.7145 - precision: 0.4870 - recall: 0.8344 - val_loss: 0.6265 - val_auc: 0.5347 - val_auprc: 0.1317 - val_accuracy: 0.6083 - val_precision: 0.1250 - val_recall: 0.3929
+Epoch 31/100
+72/72 [==============================] - 51s 712ms/step - loss: 0.5039 - auc: 0.8182 - auprc: 0.5608 - accuracy: 0.7067 - precision: 0.4788 - recall: 0.8280 - val_loss: 0.5320 - val_auc: 0.5431 - val_auprc: 0.1314 - val_accuracy: 0.7333 - val_precision: 0.1400 - val_recall: 0.2500
+Epoch 32/100
+72/72 [==============================] - 50s 696ms/step - loss: 0.5279 - auc: 0.7916 - auprc: 0.5025 - accuracy: 0.7006 - precision: 0.4722 - recall: 0.8121 - val_loss: 0.5461 - val_auc: 0.4901 - val_auprc: 0.1162 - val_accuracy: 0.7292 - val_precision: 0.0698 - val_recall: 0.1071
+Epoch 33/100
+72/72 [==============================] - 50s 693ms/step - loss: 0.5155 - auc: 0.8058 - auprc: 0.5151 - accuracy: 0.7171 - precision: 0.4897 - recall: 0.8344 - val_loss: 0.4673 - val_auc: 0.5120 - val_auprc: 0.1166 - val_accuracy: 0.8125 - val_precision: 0.1304 - val_recall: 0.1071
+Epoch 34/100
+72/72 [==============================] - 50s 690ms/step - loss: 0.5088 - auc: 0.8143 - auprc: 0.5506 - accuracy: 0.7215 - precision: 0.4944 - recall: 0.8471 - val_loss: 0.4953 - val_auc: 0.4718 - val_auprc: 0.1129 - val_accuracy: 0.8083 - val_precision: 0.1250 - val_recall: 0.1071
+Epoch 35/100
+72/72 [==============================] - 50s 694ms/step - loss: 0.5052 - auc: 0.8068 - auprc: 0.5289 - accuracy: 0.7128 - precision: 0.4856 - recall: 0.8599 - val_loss: 0.4491 - val_auc: 0.5570 - val_auprc: 0.1208 - val_accuracy: 0.8167 - val_precision: 0.1000 - val_recall: 0.0714
+Epoch 36/100
+72/72 [==============================] - 51s 707ms/step - loss: 0.4994 - auc: 0.8107 - auprc: 0.5149 - accuracy: 0.7232 - precision: 0.4962 - recall: 0.8248 - val_loss: 0.5217 - val_auc: 0.5310 - val_auprc: 0.1177 - val_accuracy: 0.7333 - val_precision: 0.0909 - val_recall: 0.1429
+Epoch 37/100
+72/72 [==============================] - 49s 682ms/step - loss: 0.5103 - auc: 0.8098 - auprc: 0.5392 - accuracy: 0.6910 - precision: 0.4651 - recall: 0.8694 - val_loss: 0.4086 - val_auc: 0.5457 - val_auprc: 0.1268 - val_accuracy: 0.8542 - val_precision: 0.1111 - val_recall: 0.0357
+Epoch 38/100
+72/72 [==============================] - 48s 674ms/step - loss: 0.4911 - auc: 0.8265 - auprc: 0.5715 - accuracy: 0.7337 - precision: 0.5078 - recall: 0.8248 - val_loss: 0.5008 - val_auc: 0.4916 - val_auprc: 0.1152 - val_accuracy: 0.8250 - val_precision: 0.1111 - val_recall: 0.0714
+Epoch 39/100
+72/72 [==============================] - 49s 674ms/step - loss: 0.4734 - auc: 0.8351 - auprc: 0.5698 - accuracy: 0.7485 - precision: 0.5248 - recall: 0.8439 - val_loss: 0.7610 - val_auc: 0.5757 - val_auprc: 0.1345 - val_accuracy: 0.5125 - val_precision: 0.1440 - val_recall: 0.6429
+Epoch 40/100
+72/72 [==============================] - 47s 647ms/step - loss: 0.4657 - auc: 0.8423 - auprc: 0.6084 - accuracy: 0.7415 - precision: 0.5163 - recall: 0.8599 - val_loss: 0.5645 - val_auc: 0.5367 - val_auprc: 0.1325 - val_accuracy: 0.6958 - val_precision: 0.1053 - val_recall: 0.2143
+Epoch 41/100
+72/72 [==============================] - 49s 687ms/step - loss: 0.4410 - auc: 0.8535 - auprc: 0.6274 - accuracy: 0.7406 - precision: 0.5150 - recall: 0.8726 - val_loss: 0.5327 - val_auc: 0.5350 - val_auprc: 0.1284 - val_accuracy: 0.8000 - val_precision: 0.0833 - val_recall: 0.0714
+Epoch 42/100
+72/72 [==============================] - 49s 684ms/step - loss: 0.4586 - auc: 0.8474 - auprc: 0.6038 - accuracy: 0.7589 - precision: 0.5356 - recall: 0.8854 - val_loss: 0.7182 - val_auc: 0.5434 - val_auprc: 0.1224 - val_accuracy: 0.5917 - val_precision: 0.1429 - val_recall: 0.5000
+Epoch 43/100
+72/72 [==============================] - 49s 682ms/step - loss: 0.4474 - auc: 0.8497 - auprc: 0.6229 - accuracy: 0.7511 - precision: 0.5265 - recall: 0.8854 - val_loss: 0.5908 - val_auc: 0.5029 - val_auprc: 0.1112 - val_accuracy: 0.7333 - val_precision: 0.1250 - val_recall: 0.2143
+Epoch 44/100
+72/72 [==============================] - 49s 675ms/step - loss: 0.4184 - auc: 0.8733 - auprc: 0.6767 - accuracy: 0.7694 - precision: 0.5481 - recall: 0.8885 - val_loss: 0.5909 - val_auc: 0.5188 - val_auprc: 0.1235 - val_accuracy: 0.7458 - val_precision: 0.1489 - val_recall: 0.2500
+Epoch 45/100
+72/72 [==============================] - 47s 659ms/step - loss: 0.4094 - auc: 0.8774 - auprc: 0.6881 - accuracy: 0.7728 - precision: 0.5521 - recall: 0.8949 - val_loss: 0.5479 - val_auc: 0.5497 - val_auprc: 0.1231 - val_accuracy: 0.7458 - val_precision: 0.0976 - val_recall: 0.1429
+Epoch 46/100
+72/72 [==============================] - 48s 667ms/step - loss: 0.4144 - auc: 0.8735 - auprc: 0.6850 - accuracy: 0.7633 - precision: 0.5401 - recall: 0.9013 - val_loss: 0.5907 - val_auc: 0.5426 - val_auprc: 0.1314 - val_accuracy: 0.7042 - val_precision: 0.1091 - val_recall: 0.2143
+Epoch 47/100
+72/72 [==============================] - 48s 670ms/step - loss: 0.5642 - auc: 0.7752 - auprc: 0.5338 - accuracy: 0.6815 - precision: 0.4500 - recall: 0.7452 - val_loss: 0.6224 - val_auc: 0.5385 - val_auprc: 0.1538 - val_accuracy: 0.5833 - val_precision: 0.1327 - val_recall: 0.4643
+Epoch 48/100
+72/72 [==============================] - 49s 682ms/step - loss: 0.5844 - auc: 0.7398 - auprc: 0.4402 - accuracy: 0.6545 - precision: 0.4260 - recall: 0.7611 - val_loss: 0.3979 - val_auc: 0.6256 - val_auprc: 0.1789 - val_accuracy: 0.8500 - val_precision: 0.2500 - val_recall: 0.1429
+Epoch 49/100
+72/72 [==============================] - 49s 680ms/step - loss: 0.5305 - auc: 0.8019 - auprc: 0.5468 - accuracy: 0.7180 - precision: 0.4905 - recall: 0.8248 - val_loss: 0.3977 - val_auc: 0.6464 - val_auprc: 0.1592 - val_accuracy: 0.8375 - val_precision: 0.1333 - val_recall: 0.0714
+Epoch 50/100
+72/72 [==============================] - 50s 691ms/step - loss: 0.4892 - auc: 0.8347 - auprc: 0.6111 - accuracy: 0.7258 - precision: 0.4990 - recall: 0.8248 - val_loss: 0.4906 - val_auc: 0.6373 - val_auprc: 0.1534 - val_accuracy: 0.7417 - val_precision: 0.2069 - val_recall: 0.4286
+Epoch 51/100
+72/72 [==============================] - 48s 672ms/step - loss: 0.4691 - auc: 0.8423 - auprc: 0.6210 - accuracy: 0.7537 - precision: 0.5306 - recall: 0.8567 - val_loss: 0.5556 - val_auc: 0.5300 - val_auprc: 0.1284 - val_accuracy: 0.7542 - val_precision: 0.1220 - val_recall: 0.1786
+Epoch 52/100
+72/72 [==============================] - 50s 692ms/step - loss: 0.4288 - auc: 0.8689 - auprc: 0.6737 - accuracy: 0.7676 - precision: 0.5458 - recall: 0.8917 - val_loss: 0.4954 - val_auc: 0.5339 - val_auprc: 0.1265 - val_accuracy: 0.8500 - val_precision: 0.2143 - val_recall: 0.1071
+Epoch 53/100
+72/72 [==============================] - 49s 683ms/step - loss: 0.4021 - auc: 0.8818 - auprc: 0.6919 - accuracy: 0.7781 - precision: 0.5577 - recall: 0.9076 - val_loss: 0.6011 - val_auc: 0.5441 - val_auprc: 0.1294 - val_accuracy: 0.8250 - val_precision: 0.1111 - val_recall: 0.0714
+Epoch 54/100
+72/72 [==============================] - 49s 681ms/step - loss: 0.3873 - auc: 0.8916 - auprc: 0.7092 - accuracy: 0.7929 - precision: 0.5769 - recall: 0.9076 - val_loss: 0.7401 - val_auc: 0.4923 - val_auprc: 0.1093 - val_accuracy: 0.7917 - val_precision: 0.0769 - val_recall: 0.0714
+Epoch 55/100
+72/72 [==============================] - 49s 675ms/step - loss: 0.3868 - auc: 0.8895 - auprc: 0.7104 - accuracy: 0.7859 - precision: 0.5672 - recall: 0.9140 - val_loss: 0.6106 - val_auc: 0.5680 - val_auprc: 0.1546 - val_accuracy: 0.7833 - val_precision: 0.1842 - val_recall: 0.2500
+Epoch 56/100
+72/72 [==============================] - 47s 647ms/step - loss: 0.3681 - auc: 0.9016 - auprc: 0.7392 - accuracy: 0.7903 - precision: 0.5720 - recall: 0.9236 - val_loss: 0.6795 - val_auc: 0.5772 - val_auprc: 0.1847 - val_accuracy: 0.7375 - val_precision: 0.1698 - val_recall: 0.3214
+Epoch 57/100
+72/72 [==============================] - 47s 655ms/step - loss: 0.3464 - auc: 0.9101 - auprc: 0.7776 - accuracy: 0.7998 - precision: 0.5843 - recall: 0.9268 - val_loss: 0.6895 - val_auc: 0.5474 - val_auprc: 0.1378 - val_accuracy: 0.7292 - val_precision: 0.1373 - val_recall: 0.2500
+Epoch 58/100
+72/72 [==============================] - 47s 649ms/step - loss: 0.4095 - auc: 0.8788 - auprc: 0.7139 - accuracy: 0.7563 - precision: 0.5322 - recall: 0.8949 - val_loss: 0.5684 - val_auc: 0.6140 - val_auprc: 0.1475 - val_accuracy: 0.8208 - val_precision: 0.0588 - val_recall: 0.0357
+Epoch 59/100
+72/72 [==============================] - 47s 648ms/step - loss: 0.3676 - auc: 0.9069 - auprc: 0.7748 - accuracy: 0.7929 - precision: 0.5763 - recall: 0.9140 - val_loss: 0.6173 - val_auc: 0.5516 - val_auprc: 0.1239 - val_accuracy: 0.7333 - val_precision: 0.1087 - val_recall: 0.1786
+Epoch 60/100
+72/72 [==============================] - 47s 658ms/step - loss: 0.3733 - auc: 0.8998 - auprc: 0.7335 - accuracy: 0.7885 - precision: 0.5709 - recall: 0.9108 - val_loss: 0.7606 - val_auc: 0.5362 - val_auprc: 0.1431 - val_accuracy: 0.7375 - val_precision: 0.1698 - val_recall: 0.3214
+Epoch 61/100
+72/72 [==============================] - 48s 668ms/step - loss: 0.3067 - auc: 0.9365 - auprc: 0.8346 - accuracy: 0.8216 - precision: 0.6133 - recall: 0.9395 - val_loss: 0.6918 - val_auc: 0.6028 - val_auprc: 0.1653 - val_accuracy: 0.8042 - val_precision: 0.1724 - val_recall: 0.1786
+Epoch 62/100
+72/72 [==============================] - 48s 666ms/step - loss: 0.3007 - auc: 0.9347 - auprc: 0.8344 - accuracy: 0.8268 - precision: 0.6200 - recall: 0.9459 - val_loss: 0.7617 - val_auc: 0.5744 - val_auprc: 0.1657 - val_accuracy: 0.8167 - val_precision: 0.1923 - val_recall: 0.1786
+Epoch 63/100
+72/72 [==============================] - 48s 661ms/step - loss: 0.3255 - auc: 0.9295 - auprc: 0.8178 - accuracy: 0.8172 - precision: 0.6079 - recall: 0.9331 - val_loss: 0.7360 - val_auc: 0.5927 - val_auprc: 0.1443 - val_accuracy: 0.7542 - val_precision: 0.1556 - val_recall: 0.2500
+Epoch 64/100
+72/72 [==============================] - 48s 673ms/step - loss: 0.2879 - auc: 0.9416 - auprc: 0.8573 - accuracy: 0.8329 - precision: 0.6298 - recall: 0.9427 - val_loss: 0.9223 - val_auc: 0.5628 - val_auprc: 0.1464 - val_accuracy: 0.8125 - val_precision: 0.0952 - val_recall: 0.0714
+Epoch 65/100
+72/72 [==============================] - 48s 666ms/step - loss: 0.2995 - auc: 0.9339 - auprc: 0.8328 - accuracy: 0.8329 - precision: 0.6320 - recall: 0.9299 - val_loss: 0.7229 - val_auc: 0.5665 - val_auprc: 0.1507 - val_accuracy: 0.7750 - val_precision: 0.1389 - val_recall: 0.1786
+Epoch 66/100
+72/72 [==============================] - 47s 652ms/step - loss: 0.3568 - auc: 0.9075 - auprc: 0.7719 - accuracy: 0.7894 - precision: 0.5703 - recall: 0.9299 - val_loss: 0.5606 - val_auc: 0.6617 - val_auprc: 0.1758 - val_accuracy: 0.8250 - val_precision: 0.1500 - val_recall: 0.1071
+Epoch 67/100
+72/72 [==============================] - 43s 598ms/step - loss: 0.2751 - auc: 0.9443 - auprc: 0.8604 - accuracy: 0.8477 - precision: 0.6534 - recall: 0.9427 - val_loss: 0.8641 - val_auc: 0.5693 - val_auprc: 0.1470 - val_accuracy: 0.7583 - val_precision: 0.1875 - val_recall: 0.3214
+Epoch 68/100
+72/72 [==============================] - 41s 561ms/step - loss: 0.2553 - auc: 0.9551 - auprc: 0.8868 - accuracy: 0.8538 - precision: 0.6622 - recall: 0.9490 - val_loss: 0.9531 - val_auc: 0.5601 - val_auprc: 0.1485 - val_accuracy: 0.7958 - val_precision: 0.1818 - val_recall: 0.2143
+Epoch 69/100
+72/72 [==============================] - 38s 524ms/step - loss: 0.2444 - auc: 0.9594 - auprc: 0.9007 - accuracy: 0.8642 - precision: 0.6812 - recall: 0.9459 - val_loss: 0.7787 - val_auc: 0.6386 - val_auprc: 0.1628 - val_accuracy: 0.7542 - val_precision: 0.1961 - val_recall: 0.3571
+Epoch 70/100
+72/72 [==============================] - 38s 525ms/step - loss: 0.2598 - auc: 0.9531 - auprc: 0.8731 - accuracy: 0.8564 - precision: 0.6652 - recall: 0.9554 - val_loss: 0.9833 - val_auc: 0.5776 - val_auprc: 0.1440 - val_accuracy: 0.6958 - val_precision: 0.1642 - val_recall: 0.3929
+Epoch 71/100
+72/72 [==============================] - 39s 535ms/step - loss: 0.3112 - auc: 0.9369 - auprc: 0.8375 - accuracy: 0.8372 - precision: 0.6433 - recall: 0.9076 - val_loss: 0.9159 - val_auc: 0.5722 - val_auprc: 0.1472 - val_accuracy: 0.6208 - val_precision: 0.1379 - val_recall: 0.4286
+Epoch 72/100
+72/72 [==============================] - 41s 564ms/step - loss: 0.3434 - auc: 0.9172 - auprc: 0.7857 - accuracy: 0.8077 - precision: 0.5943 - recall: 0.9331 - val_loss: 0.8589 - val_auc: 0.5761 - val_auprc: 0.1461 - val_accuracy: 0.7208 - val_precision: 0.1455 - val_recall: 0.2857
+Epoch 73/100
+72/72 [==============================] - 40s 557ms/step - loss: 0.3002 - auc: 0.9409 - auprc: 0.8566 - accuracy: 0.8355 - precision: 0.6368 - recall: 0.9268 - val_loss: 0.9466 - val_auc: 0.5670 - val_auprc: 0.1316 - val_accuracy: 0.7750 - val_precision: 0.1389 - val_recall: 0.1786
+Epoch 74/100
+72/72 [==============================] - 40s 560ms/step - loss: 0.2433 - auc: 0.9598 - auprc: 0.8987 - accuracy: 0.8581 - precision: 0.6697 - recall: 0.9490 - val_loss: 0.8757 - val_auc: 0.5522 - val_auprc: 0.1350 - val_accuracy: 0.8333 - val_precision: 0.1250 - val_recall: 0.0714
+Epoch 75/100
+72/72 [==============================] - 39s 540ms/step - loss: 0.2190 - auc: 0.9677 - auprc: 0.9220 - accuracy: 0.8808 - precision: 0.7122 - recall: 0.9459 - val_loss: 0.9626 - val_auc: 0.5855 - val_auprc: 0.1496 - val_accuracy: 0.8042 - val_precision: 0.1724 - val_recall: 0.1786
+Epoch 76/100
+72/72 [==============================] - 40s 557ms/step - loss: 0.2522 - auc: 0.9587 - auprc: 0.8953 - accuracy: 0.8634 - precision: 0.6796 - recall: 0.9459 - val_loss: 0.7829 - val_auc: 0.6751 - val_auprc: 0.1910 - val_accuracy: 0.8000 - val_precision: 0.2059 - val_recall: 0.2500
+Epoch 77/100
+72/72 [==============================] - 40s 556ms/step - loss: 0.1985 - auc: 0.9741 - auprc: 0.9369 - accuracy: 0.8990 - precision: 0.7450 - recall: 0.9586 - val_loss: 1.0087 - val_auc: 0.6082 - val_auprc: 0.1569 - val_accuracy: 0.7917 - val_precision: 0.1944 - val_recall: 0.2500
+Epoch 78/100
+72/72 [==============================] - 41s 570ms/step - loss: 0.1689 - auc: 0.9817 - auprc: 0.9528 - accuracy: 0.9095 - precision: 0.7612 - recall: 0.9745 - val_loss: 1.2630 - val_auc: 0.5861 - val_auprc: 0.1460 - val_accuracy: 0.8167 - val_precision: 0.1364 - val_recall: 0.1071
+Epoch 79/100
+72/72 [==============================] - 41s 573ms/step - loss: 0.1523 - auc: 0.9846 - auprc: 0.9552 - accuracy: 0.9173 - precision: 0.7829 - recall: 0.9650 - val_loss: 1.3717 - val_auc: 0.5579 - val_auprc: 0.1357 - val_accuracy: 0.8250 - val_precision: 0.1500 - val_recall: 0.1071
+Epoch 80/100
+72/72 [==============================] - 40s 561ms/step - loss: 0.1477 - auc: 0.9844 - auprc: 0.9589 - accuracy: 0.9225 - precision: 0.7848 - recall: 0.9873 - val_loss: 1.1632 - val_auc: 0.6211 - val_auprc: 0.1590 - val_accuracy: 0.8000 - val_precision: 0.1875 - val_recall: 0.2143
+Epoch 81/100
+72/72 [==============================] - 40s 558ms/step - loss: 0.2073 - auc: 0.9713 - auprc: 0.9181 - accuracy: 0.9043 - precision: 0.7615 - recall: 0.9459 - val_loss: 1.1942 - val_auc: 0.5668 - val_auprc: 0.1322 - val_accuracy: 0.7958 - val_precision: 0.1379 - val_recall: 0.1429
+Epoch 82/100
+72/72 [==============================] - 40s 549ms/step - loss: 0.3164 - auc: 0.9402 - auprc: 0.8464 - accuracy: 0.8564 - precision: 0.6753 - recall: 0.9140 - val_loss: 1.1173 - val_auc: 0.5147 - val_auprc: 0.1288 - val_accuracy: 0.7792 - val_precision: 0.1212 - val_recall: 0.1429
+Epoch 83/100
+72/72 [==============================] - 39s 541ms/step - loss: 0.2633 - auc: 0.9549 - auprc: 0.8819 - accuracy: 0.8599 - precision: 0.6767 - recall: 0.9331 - val_loss: 0.9958 - val_auc: 0.5842 - val_auprc: 0.1407 - val_accuracy: 0.8125 - val_precision: 0.2069 - val_recall: 0.2143
+Epoch 84/100
+72/72 [==============================] - 39s 542ms/step - loss: 0.1425 - auc: 0.9885 - auprc: 0.9699 - accuracy: 0.9252 - precision: 0.7938 - recall: 0.9809 - val_loss: 1.1879 - val_auc: 0.5937 - val_auprc: 0.1510 - val_accuracy: 0.8375 - val_precision: 0.2105 - val_recall: 0.1429
+Epoch 85/100
+72/72 [==============================] - 39s 536ms/step - loss: 0.1360 - auc: 0.9891 - auprc: 0.9711 - accuracy: 0.9347 - precision: 0.8204 - recall: 0.9745 - val_loss: 1.1969 - val_auc: 0.6621 - val_auprc: 0.1702 - val_accuracy: 0.7833 - val_precision: 0.1842 - val_recall: 0.2500
+Epoch 86/100
+72/72 [==============================] - 39s 541ms/step - loss: 0.1508 - auc: 0.9867 - auprc: 0.9673 - accuracy: 0.9199 - precision: 0.7891 - recall: 0.9650 - val_loss: 1.1595 - val_auc: 0.6114 - val_auprc: 0.1573 - val_accuracy: 0.8125 - val_precision: 0.1304 - val_recall: 0.1071
+Epoch 87/100
+72/72 [==============================] - 40s 549ms/step - loss: 0.1180 - auc: 0.9919 - auprc: 0.9794 - accuracy: 0.9452 - precision: 0.8438 - recall: 0.9809 - val_loss: 1.1741 - val_auc: 0.6768 - val_auprc: 0.1938 - val_accuracy: 0.8125 - val_precision: 0.1304 - val_recall: 0.1071
+Epoch 88/100
+72/72 [==============================] - 47s 657ms/step - loss: 0.1688 - auc: 0.9816 - auprc: 0.9492 - accuracy: 0.9208 - precision: 0.7942 - recall: 0.9586 - val_loss: 1.3049 - val_auc: 0.5601 - val_auprc: 0.1356 - val_accuracy: 0.8208 - val_precision: 0.1739 - val_recall: 0.1429
+Epoch 89/100
+72/72 [==============================] - 47s 651ms/step - loss: 0.1776 - auc: 0.9797 - auprc: 0.9467 - accuracy: 0.9130 - precision: 0.7816 - recall: 0.9459 - val_loss: 1.4722 - val_auc: 0.5108 - val_auprc: 0.1300 - val_accuracy: 0.8292 - val_precision: 0.1905 - val_recall: 0.1429
+Epoch 90/100
+72/72 [==============================] - 50s 698ms/step - loss: 0.1249 - auc: 0.9903 - auprc: 0.9735 - accuracy: 0.9434 - precision: 0.8392 - recall: 0.9809 - val_loss: 1.4265 - val_auc: 0.5615 - val_auprc: 0.1411 - val_accuracy: 0.8208 - val_precision: 0.1429 - val_recall: 0.1071
+Epoch 91/100
+72/72 [==============================] - 50s 694ms/step - loss: 0.1378 - auc: 0.9881 - auprc: 0.9670 - accuracy: 0.9330 - precision: 0.8194 - recall: 0.9682 - val_loss: 1.4348 - val_auc: 0.5095 - val_auprc: 0.1368 - val_accuracy: 0.8583 - val_precision: 0.2857 - val_recall: 0.1429
+Epoch 92/100
+72/72 [==============================] - 51s 708ms/step - loss: 0.0984 - auc: 0.9941 - auprc: 0.9843 - accuracy: 0.9556 - precision: 0.8768 - recall: 0.9745 - val_loss: 1.6853 - val_auc: 0.5247 - val_auprc: 0.1244 - val_accuracy: 0.8333 - val_precision: 0.1667 - val_recall: 0.1071
+Epoch 93/100
+72/72 [==============================] - 50s 698ms/step - loss: 0.1846 - auc: 0.9787 - auprc: 0.9453 - accuracy: 0.9147 - precision: 0.7919 - recall: 0.9331 - val_loss: 1.6478 - val_auc: 0.5324 - val_auprc: 0.1220 - val_accuracy: 0.7875 - val_precision: 0.0741 - val_recall: 0.0714
+Epoch 94/100
+72/72 [==============================] - 50s 689ms/step - loss: 0.3822 - auc: 0.9158 - auprc: 0.7812 - accuracy: 0.8146 - precision: 0.6183 - recall: 0.8408 - val_loss: 0.8024 - val_auc: 0.6146 - val_auprc: 0.1863 - val_accuracy: 0.8208 - val_precision: 0.2414 - val_recall: 0.2500
+Epoch 95/100
+72/72 [==============================] - 50s 701ms/step - loss: 0.1584 - auc: 0.9855 - auprc: 0.9602 - accuracy: 0.9121 - precision: 0.7710 - recall: 0.9650 - val_loss: 1.2807 - val_auc: 0.5503 - val_auprc: 0.1298 - val_accuracy: 0.7958 - val_precision: 0.1111 - val_recall: 0.1071
+Epoch 96/100
+72/72 [==============================] - 49s 687ms/step - loss: 0.1358 - auc: 0.9884 - auprc: 0.9615 - accuracy: 0.9478 - precision: 0.8547 - recall: 0.9745 - val_loss: 1.1344 - val_auc: 0.5163 - val_auprc: 0.1257 - val_accuracy: 0.7292 - val_precision: 0.1373 - val_recall: 0.2500
+Epoch 97/100
+72/72 [==============================] - 50s 689ms/step - loss: 0.1303 - auc: 0.9900 - auprc: 0.9751 - accuracy: 0.9399 - precision: 0.8375 - recall: 0.9682 - val_loss: 1.2465 - val_auc: 0.5582 - val_auprc: 0.1380 - val_accuracy: 0.8000 - val_precision: 0.1154 - val_recall: 0.1071
+Epoch 98/100
+72/72 [==============================] - 49s 687ms/step - loss: 0.0660 - auc: 0.9977 - auprc: 0.9906 - accuracy: 0.9730 - precision: 0.9125 - recall: 0.9968 - val_loss: 1.3766 - val_auc: 0.5653 - val_auprc: 0.1358 - val_accuracy: 0.7917 - val_precision: 0.1071 - val_recall: 0.1071
+Epoch 99/100
+72/72 [==============================] - 49s 685ms/step - loss: 0.0511 - auc: 0.9989 - auprc: 0.9971 - accuracy: 0.9765 - precision: 0.9335 - recall: 0.9841 - val_loss: 1.4688 - val_auc: 0.5494 - val_auprc: 0.1327 - val_accuracy: 0.8000 - val_precision: 0.0833 - val_recall: 0.0714
+Epoch 100/100
+72/72 [==============================] - 48s 672ms/step - loss: 0.0394 - auc: 0.9994 - auprc: 0.9985 - accuracy: 0.9826 - precision: 0.9428 - recall: 0.9968 - val_loss: 1.6711 - val_auc: 0.5133 - val_auprc: 0.1265 - val_accuracy: 0.7917 - val_precision: 0.1071 - val_recall: 0.1071
+8/8 [==============================] - 8s 259ms/step
+9/9 [==============================] - 2s 248ms/step
+Confusion Matrix:
+[[137  35]
+ [ 61  30]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.69      0.80      0.74       172
+           1       0.46      0.33      0.38        91
+
+    accuracy                           0.63       263
+   macro avg       0.58      0.56      0.56       263
+weighted avg       0.61      0.63      0.62       263
+
+24/24 [==============================] - 11s 222ms/step
+Confusion Matrix:
+[[464  80]
+ [111  88]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.81      0.85      0.83       544
+           1       0.52      0.44      0.48       199
+
+    accuracy                           0.74       743
+   macro avg       0.67      0.65      0.65       743
+weighted avg       0.73      0.74      0.74       743
+
+
+进程已结束,退出代码0
