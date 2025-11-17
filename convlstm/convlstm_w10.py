@@ -113,11 +113,6 @@ model = Sequential([
 
 # uncomment if method is used
 
-# balance (weight)
-# classes = np.array([0, 1])
-# class_weights = compute_class_weight(class_weight='balanced', classes=classes, y=y_train)
-# class_weights_dict = dict(zip(classes, class_weights))
-
 # SMOTE
 # n_samples, T_seq, Y_dim, X_dim, C_dim = X_train.shape
 # X_train_flat = X_train.reshape(n_samples, -1)
@@ -152,9 +147,6 @@ with tf.device('/GPU:0'):
     model.summary()
 
     # uncomment the corresponding method
-
-    # train (class weight)
-    # history = model.fit(X_train, y_train, epochs=100, batch_size=16, validation_data=(X_val, y_val), class_weight=class_weights_dict)
 
     # train (SMOTE)
     # history = model.fit(X_train_smote, y_train_smote, epochs=100, batch_size=16, validation_data=(X_val, y_val))
@@ -260,5 +252,6 @@ print("Confusion Matrix:")
 print(confusion_matrix(y_seq, y_pred_fixed))
 print("Classification Report:")
 print(classification_report(y_seq, y_pred_fixed))
+
 
 
