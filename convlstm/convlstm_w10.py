@@ -7,7 +7,8 @@ from tensorflow.keras.layers import ConvLSTM2D, BatchNormalization, Conv3D, Flat
 from tensorflow.keras.models import Sequential
 from sklearn.model_selection import train_test_split
 import tensorflow as tf
-from sklearn.metrics import precision_recall_curve, matthews_corrcoef, classification_report, confusion_matrix
+from sklearn.metrics import precision_recall_curve, matthews_corrcoef, classification_report, confusion_matrix, \
+    roc_auc_score, average_precision_score
 from sklearn.utils.class_weight import compute_class_weight
 from imblearn.over_sampling import SMOTE
 
@@ -68,7 +69,8 @@ X_seq, y_seq, date_seq = np.array(X_seq), np.array(y_seq), np.array(date_seq)
 date_seq = pd.to_datetime(date_seq)
 
 # 70-15-15 split
-valid_months = np.array([1, 2])  # months used, [1, 2], [1, 2, 3, 10, 11, 12], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+valid_months = np.array(
+    [1, 2, 3, 10, 11, 12])  # months used, [1, 2], [1, 2, 3, 10, 11, 12], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 month_mask = np.isin(date_seq.month, valid_months)
 X_seq_m = X_seq[month_mask]
 y_seq_m = y_seq[month_mask]
@@ -161,13 +163,17 @@ with tf.device('/GPU:0'):
     # history = model.fit(X_train_us, y_train_us, epochs=100, batch_size=16, validation_data=(X_val, y_val))
 
     # none
-    # history = model.fit(X_train, y_train, epochs=100, batch_size=16, validation_data=(X_val, y_val))
+    history = model.fit(X_train, y_train, epochs=100, batch_size=16, validation_data=(X_val, y_val))
 
 proba_val = model.predict(X_val).ravel()
 proba_eval = model.predict(X_test).ravel()
 
 # fix threshold
 y_pred_fixed = (proba_eval >= 0.5).astype(int)
+auroc = roc_auc_score(y_test, proba_eval)
+prauc = average_precision_score(y_test, proba_eval)
+print("prauc:", prauc)
+print("auroc:", auroc)
 
 print("Confusion Matrix:")
 print(confusion_matrix(y_test, y_pred_fixed))
@@ -246,7 +252,13 @@ X_seq, y_seq = np.array(X_seq), np.array(y_seq)
 
 proba_eval = model.predict(X_seq).ravel()
 y_pred_fixed = (proba_eval >= 0.5).astype(int)
+auroc = roc_auc_score(y_seq, proba_eval)
+prauc = average_precision_score(y_seq, proba_eval)
+print("prauc:", prauc)
+print("auroc:", auroc)
 print("Confusion Matrix:")
 print(confusion_matrix(y_seq, y_pred_fixed))
 print("Classification Report:")
 print(classification_report(y_seq, y_pred_fixed))
+
+
